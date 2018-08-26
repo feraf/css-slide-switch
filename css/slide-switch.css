@@ -1,0 +1,51 @@
+.switch {
+    opacity: 0;
+}
+.switch + .switch_label {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    width: 150px;
+    height: 46px;
+    background: #CB4D47;
+    border-radius: 23px;
+    box-sizing: border-box;
+    margin-top: -20px;
+    transition: all 250ms ease-out;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, .6);
+}
+.switch + .switch_label::before {
+    content: "no";
+    text-transform: uppercase; 
+    color: #FFF;
+    font-weight: bolder;
+    line-height: 46px;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 0 20px;
+    text-align: right;
+}
+.switch + .switch_label::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background: linear-gradient(#FCFCFC, #AFAFAF);
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    transition: all 250ms ease-out;
+    box-shadow: 0 8px 6px -4px rgba(0, 0, 0, .5);
+    top: 3px;
+    left: 3px;
+}
+.switch:checked + .switch_label {
+    background: #47CB8F;
+}
+.switch:checked + .switch_label::after {
+    left: 107px;
+}
+.switch:checked + .switch_label::before {
+    content: "yes";
+    text-align: left;
+}
